@@ -2,7 +2,6 @@
   "use strict";
 
   const SAVE_KEY = "cyber-pair-save-v1";
-  const SETTINGS_KEY = "cyber-pair-settings-v1";
 
   const el = (id) => document.getElementById(id);
   const background = el("background");
@@ -21,8 +20,6 @@
   let currentNodeId;
   let currentNode;
   let activeCharacters = { left: null, right: null };
-  let leftVisible = true;
-  let rightVisible = true;
   let toastTimer;
 
   async function loadJson(path) {
@@ -43,8 +40,6 @@
     if (!currentNodeId) return;
     const payload = {
       nodeId: currentNodeId,
-      leftVisible,
-      rightVisible,
       savedAt: new Date().toISOString()
     };
     try {
@@ -67,8 +62,6 @@
         if (showMessage) showToast("保存データを読み込めませんでした。");
         return false;
       }
-      leftVisible = saved.leftVisible !== false;
-      rightVisible = saved.rightVisible !== false;
       renderNode(saved.nodeId);
       if (showMessage) showToast("保存データから再開しました。");
       return true;
@@ -91,7 +84,7 @@
   function renderCharacter(slotName, characterId) {
     const slot = el(`character-${slotName}`);
     slot.replaceChildren();
-    slot.classList.toggle("is-hidden", slotName === "left" ? !leftVisible : !rightVisible);
+    slot.classList.remove("is-hidden");
 
     if (!characterId || !characters[characterId]) return;
     const character = characters[characterId];
@@ -255,8 +248,6 @@
     menuPanel.hidden = !menuPanel.hidden;
   });
   el("close-menu").addEventListener("click", () => { menuPanel.hidden = true; });
-  el("toggle-left").addEventListener("click", () => toggleCharacter("left"));
-  el("toggle-right").addEventListener("click", () => toggleCharacter("right"));
   el("save-button").addEventListener("click", () => { saveProgress(); showToast("進行状況を保存しました。"); });
   el("load-button").addEventListener("click", () => loadProgress(true));
   el("restart-button").addEventListener("click", () => {
@@ -285,7 +276,6 @@
         loadJson("data/story.json"),
         loadJson("data/characters.json")
       ]);
-      loadSettings();
       if (!loadProgress(false)) renderNode(storyData.start);
     } catch (error) {
       dialogueText.textContent = `ゲームデータの読み込みに失敗しました。\n${error.message}\n\nGitHub PagesまたはローカルWebサーバー経由で開いてください。`;
