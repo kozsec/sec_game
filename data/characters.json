@@ -6,7 +6,7 @@
     "rightImage": "assets/characters/movi.png"
   },
   "protagonist": {
-    "name": "主人公",
+    "name": "あなた",
     "color": "#FFC857",
     "leftImage": "assets/characters/protagonist.png",
     "rightImage": "assets/characters/protagonist.png"
