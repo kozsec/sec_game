@@ -13,8 +13,8 @@
   },
   "employee": {
     "name": "あなた",
-    "color": "#65D9FF",
+    "color": "#959696",
     "leftImage": "assets/characters/employee.png",
     "rightImage": "assets/characters/employee.png"
-  },
+  }
 }
