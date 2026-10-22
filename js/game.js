@@ -10,7 +10,6 @@
   const speakerName = el("speaker-name");
   const speakerBar = el("speaker-bar");
   const choices = el("choices");
-  const nextButton = el("next-button");
   const menuPanel = el("menu-panel");
   const videoLayer = el("video-layer");
   const video = el("scene-video");
@@ -183,7 +182,6 @@
     el("scene-label").textContent = node.episodeLabel || storyData.episodeLabel || "STORY";
     choices.replaceChildren();
     choices.hidden = !Array.isArray(node.choices) || node.choices.length === 0;
-    nextButton.hidden = choices.hidden || !node.next;
 
     if (Array.isArray(node.choices)) {
       for (const choice of node.choices) {
@@ -197,7 +195,6 @@
           } else if (choice.end) {
             dialogueText.textContent = "プレイありがとうございました。メニューから保存データを再開できます。";
             choices.hidden = true;
-            nextButton.hidden = true;
             currentNodeId = nodeId;
             saveProgress();
           } else {
@@ -240,7 +237,11 @@
     }
   }
 
-  nextButton.addEventListener("click", () => {
+  el("scene").addEventListener("click", (event) => {
+    if (event.target.closest("button, .choices, .menu-panel, .video-layer")) return;
+    if (!menuPanel.hidden || !videoLayer.hidden) return;
+    if (!choices.hidden) return;
+    if (currentNode?.advanceMode === "target") return;
     if (currentNode?.next) renderNode(currentNode.next);
   });
 
@@ -266,13 +267,14 @@
       if (!videoLayer.hidden) closeVideo();
     } else if ((event.key === "Enter" || event.key === " ") && document.activeElement === document.body) {
       if (!choices.hidden) return;
+      if (currentNode?.advanceMode === "target") return;
       if (currentNode?.next) renderNode(currentNode.next);
     }
   });
 
   async function init() {
     try {
-      [storyData, characters] = await Promise.all([
+      [storyData, characfters] = await Promise.all([
         loadJson("data/story.json"),
         loadJson("data/characters.json")
       ]);
