@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Cyber Pair — ノベルゲーム</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <main id="game" class="game" aria-label="ノベルゲーム">
+    <div id="scene" class="scene">
+      <div id="background" class="background"></div>
+      <div class="scene-shade"></div>
+
+      <div class="topbar">
+        <div class="game-mark">CYBER <span>PAIR</span></div>
+        <div class="topbar-actions">
+          <button id="menu-button" class="small-button" type="button" aria-label="メニュー">☰</button>
+        </div>
+      </div>
+
+      <div class="character-stage">
+        <div id="character-left" class="character-slot left" aria-label="左側キャラクター"></div>
+        <div id="character-right" class="character-slot right" aria-label="右側キャラクター"></div>
+      </div>
+
+      <div id="video-layer" class="video-layer" hidden>
+        <video id="scene-video" controls playsinline></video>
+        <button id="close-video" class="video-close" type="button">動画を閉じる</button>
+      </div>
+
+      <section class="dialogue" aria-live="polite" aria-atomic="true">
+        <div id="speaker-line" class="speaker-line" hidden>
+          <span id="speaker-bar" class="speaker-bar"></span>
+          <span id="speaker-name" class="speaker-name"></span>
+        </div>
+        <div id="dialogue-text" class="dialogue-text"></div>
+        <div class="dialogue-footer">
+          <span id="scene-label" class="scene-label">EPISODE 01</span>
+          <button id="next-button" class="next-button" type="button">次へ <span aria-hidden="true">▸</span></button>
+        </div>
+      </section>
+
+      <section id="choices" class="choices" aria-label="選択肢" hidden></section>
+
+      <div id="menu-panel" class="menu-panel" hidden>
+        <div class="menu-heading">メニュー</div>
+        <button id="save-button" type="button">進行状況を保存</button>
+        <button id="load-button" type="button">保存データから再開</button>
+        <button id="restart-button" class="danger-button" type="button">最初から始める</button>
+        <button id="close-menu" type="button">閉じる</button>
+        <p id="save-status" class="save-status">進行状況は自動保存されます。</p>
+      </div>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+  </main>
+  <script src="js/game.js"></script>
+</body>
+</html>

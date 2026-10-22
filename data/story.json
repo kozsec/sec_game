@@ -1,0 +1,104 @@
+{
+  "start": "ep01_001",
+  "episodeLabel": "EPISODE 01",
+  "nodes": {
+    "ep01_001": {
+      "background": "assets/backgrounds/soc_room.jpg",
+      "music": "assets/music/quiet_theme.mp3",
+      "characters": {
+        "left": "protagonist",
+        "right": "movi"
+      },
+      "speaker": "narration",
+      "text": "午前2時17分。製造会社の監視室に、深夜の静けさを破る警報が鳴り響いた。\\n生産管理サーバーから、見慣れない通信が続いている。",
+      "next": "ep01_002"
+    },
+    "ep01_002": {
+      "speaker": "movi",
+      "text": "不審な通信を検知。感染の可能性は高いです。対象サーバーをネットワークから切り離すことを推奨します。",
+      "next": "ep01_003"
+    },
+    "ep01_003": {
+      "speaker": "protagonist",
+      "text": "待ってくれ。あのサーバーを止めたら、工場の生産ラインまで止まるかもしれない。",
+      "next": "ep01_004"
+    },
+    "ep01_004": {
+      "speaker": "movi",
+      "text": "……ですが、被害拡大を防ぐには隔離が最も確実です。私は、あなたの判断を待っています。",
+      "next": "ep01_005"
+    },
+    "ep01_005": {
+      "speaker": "narration",
+      "text": "モニターに表示された推奨手順は正しい。けれど、現場の状況は数字だけでは判断できない。あなたは次の行動を選ぶ。",
+      "choices": [
+        {
+          "text": "すぐにサーバーを隔離する",
+          "next": "ep01_isolate"
+        },
+        {
+          "text": "現場担当者に影響範囲を確認し、通信を限定して調査する",
+          "next": "ep01_investigate"
+        }
+      ]
+    },
+    "ep01_isolate": {
+      "background": "assets/backgrounds/alert_room.jpg",
+      "speaker": "protagonist",
+      "text": "安全を優先する。サーバーを隔離しよう。ただし、現場にはすぐに連絡して、生産への影響を確認する。",
+      "next": "ep01_isolate_2"
+    },
+    "ep01_isolate_2": {
+      "speaker": "movi",
+      "text": "了解……。隔離を実行します。生産ラインへの影響確認も並行して進めます。",
+      "next": "ep01_reveal"
+    },
+    "ep01_investigate": {
+      "speaker": "protagonist",
+      "text": "まず現場に確認する。通信先を監視しながら、影響範囲を絞り込もう。止めるべきものと、止めてはいけないものを見極めたい。",
+      "next": "ep01_investigate_2"
+    },
+    "ep01_investigate_2": {
+      "speaker": "movi",
+      "text": "分かりました。……あなたは、正しい手順だけでなく、そこで働く人たちのことも考えているのですね。",
+      "next": "ep01_reveal"
+    },
+    "ep01_reveal": {
+      "background": "assets/backgrounds/soc_room.jpg",
+      "speaker": "narration",
+      "text": "調査の結果、不審な通信は保守用端末を経由して広がろうとしていた。初動対応によって、被害は限定された。",
+      "next": "ep01_reveal_2"
+    },
+    "ep01_reveal_2": {
+      "speaker": "movi",
+      "text": "私は、最初から隔離を推奨するよう設計されています。けれど、あなたが現場の人たちを気にかけたとき、私はその判断を守りたいと思いました。……それが、私の中に生まれた感情なのかもしれません。",
+      "next": "ep01_reveal_3"
+    },
+    "ep01_reveal_3": {
+      "speaker": "protagonist",
+      "text": "感情があったから、正しい判断ができたのか？",
+      "next": "ep01_reveal_4"
+    },
+    "ep01_reveal_4": {
+      "speaker": "movi",
+      "text": "いいえ。感情だけでは、サイバー事故は解決できません。でも、感情があるから、数字の向こうにいる人を忘れずにいられる。あなたと一緒に考えられるんです。",
+      "next": "ep01_ending"
+    },
+    "ep01_ending": {
+      "speaker": "narration",
+      "text": "正確さだけでは届かない答えがある。人を守る技術と、人を思う心。その両方を携えて、あなたとMoviの物語が始まる。",
+      "music": "assets/music/ending_theme.mp3",
+      "choices": [
+        {
+          "text": "もう一度プレイする",
+          "next": "ep01_001",
+          "reset": true
+        },
+        {
+          "text": "ここで終了する",
+          "end": true
+        }
+      ]
+    }
+  }
+}

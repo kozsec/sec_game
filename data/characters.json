@@ -1,0 +1,14 @@
+{
+  "movi": {
+    "name": "Movi",
+    "color": "#65D9FF",
+    "leftImage": "assets/characters/movi.png",
+    "rightImage": "assets/characters/movi.png"
+  },
+  "protagonist": {
+    "name": "主人公",
+    "color": "#FFC857",
+    "leftImage": "assets/characters/protagonist.png",
+    "rightImage": "assets/characters/protagonist.png"
+  }
+}
