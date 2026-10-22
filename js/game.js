@@ -274,7 +274,7 @@
 
   async function init() {
     try {
-      [storyData, characfters] = await Promise.all([
+      [storyData, characters] = await Promise.all([
         loadJson("data/story.json"),
         loadJson("data/characters.json")
       ]);
