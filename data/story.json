@@ -6,7 +6,7 @@
       "background": "assets/backgrounds/soc_room.jpg",
       "music": "assets/music/quiet_theme.mp3",
       "characters": {
-        "left": "protagonist",
+        "left": "ceo",
         "right": "movi"
       },
       "speaker": "narration",
@@ -19,7 +19,7 @@
       "next": "ep01_003"
     },
     "ep01_003": {
-      "speaker": "protagonist",
+      "speaker": "ceo",
       "text": "待ってくれ。あのサーバーを止めたら、工場の生産ラインまで止まるかもしれない。",
       "next": "ep01_004"
     },
@@ -44,7 +44,7 @@
     },
     "ep01_isolate": {
       "background": "assets/backgrounds/alert_room.jpg",
-      "speaker": "protagonist",
+      "speaker": "ceo",
       "text": "安全を優先する。サーバーを隔離しよう。ただし、現場にはすぐに連絡して、生産への影響を確認する。",
       "next": "ep01_isolate_2"
     },
@@ -54,7 +54,7 @@
       "next": "ep01_reveal"
     },
     "ep01_investigate": {
-      "speaker": "protagonist",
+      "speaker": "ceo",
       "text": "まず現場に確認する。通信先を監視しながら、影響範囲を絞り込もう。止めるべきものと、止めてはいけないものを見極めたい。",
       "next": "ep01_investigate_2"
     },
@@ -75,7 +75,7 @@
       "next": "ep01_reveal_3"
     },
     "ep01_reveal_3": {
-      "speaker": "protagonist",
+      "speaker": "ceo",
       "text": "感情があったから、正しい判断ができたのか？",
       "next": "ep01_reveal_4"
     },

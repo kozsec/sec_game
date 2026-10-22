@@ -5,10 +5,10 @@
     "leftImage": "assets/characters/movi.png",
     "rightImage": "assets/characters/movi.png"
   },
-  "protagonist": {
-    "name": "あなた",
+  "ceo": {
+    "name": "猪部",
     "color": "#FFC857",
-    "leftImage": "assets/characters/protagonist.png",
-    "rightImage": "assets/characters/protagonist.png"
+    "leftImage": "assets/characters/ceo.png",
+    "rightImage": "assets/characters/ceo.png"
   }
 }
