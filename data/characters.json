@@ -10,5 +10,11 @@
     "color": "#FFC857",
     "leftImage": "assets/characters/ceo.png",
     "rightImage": "assets/characters/ceo.png"
-  }
+  },
+  "employee": {
+    "name": "あなた",
+    "color": "#65D9FF",
+    "leftImage": "assets/characters/employee.png",
+    "rightImage": "assets/characters/employee.png"
+  },
 }
